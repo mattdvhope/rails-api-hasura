@@ -19,7 +19,7 @@ class HasuraController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params[:input].require(:user).permit(:username, :email, :password)
   end
 
 end
