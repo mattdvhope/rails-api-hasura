@@ -3,7 +3,7 @@ class HasuraController < ApplicationController
 	def register_user_handler
     user = User.new(user_params)
 
-    p user_params
+    puts "HERE IS USER_PARAMS!!! " + user_params
 
     if user.save
 	    render json: user
