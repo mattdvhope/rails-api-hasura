@@ -1,11 +1,10 @@
 class HasuraController < ApplicationController
 
 	def register_user_handler
-    # request_data = params[:input]
     user = User.new(user_params)
-    # user.username = request_data.username
-    # user.email = request_data.email
-    # user.password = request_data.password
+
+    p user_params
+
     if user.save
 	    render json: user
 	  else
