@@ -1,9 +1,8 @@
 class HasuraController < ApplicationController
 
 	def register_user_handler
-    request_data = params[:input]
-    # puts request_data
-    user = User.new(params[:input])
+    # request_data = params[:input]
+    user = User.new(user_params)
     if user.save
 	    render json: user # {id: 1} #request_data
 	  else
@@ -15,6 +14,12 @@ class HasuraController < ApplicationController
         render json: nil, status: :ok
       end
 	  end
+  end
+
+  private
+
+  def user_params
+    params[:input].require(:user).permit(:username, :email, :password)
   end
 
 end
