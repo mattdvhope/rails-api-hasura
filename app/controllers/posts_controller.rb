@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 	end
 
   def input_params # ":input" is the param provided by hasura, NOT ":post"
-    params.require(:input).permit(:content)
+    params.require(:input).permit(:content, :user_id)
   end
 
 end
