@@ -20,7 +20,7 @@ class HasuraController < ApplicationController
   private
 
   def input_params # ":input" is the param provided by hasura, NOT ":user"
-    params.require(:input).permit(:username, :email, :password)
+    params.require(:input).permit(:fb_id, :first_name, :last_name, :name, :picture_url)
   end
 
 end
