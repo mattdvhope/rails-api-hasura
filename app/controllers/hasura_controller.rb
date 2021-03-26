@@ -3,8 +3,7 @@ class HasuraController < ApplicationController
   def register_user_handler
     user = User.find_by_fb_id(input_params[:fb_id]) # maybe change to 'where' for better performance speed
     if user
-      update_login_time(user, 85)
-      # update_login_time(user, input_params[:login_time])
+      update_login_time(user, input_params[:login_time])
       render json: user
     else
       create
