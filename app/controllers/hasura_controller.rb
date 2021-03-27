@@ -12,7 +12,6 @@ class HasuraController < ApplicationController
 
 	def create
     user = User.new(input_params)
-    update_login_time(user, input_params[:login_time])
     if user.save
 	    render json: user
 	  else
